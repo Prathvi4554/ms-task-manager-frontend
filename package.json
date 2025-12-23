@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port=4222",
+    "build-dev": "ng build -c development",
+    "build-production":"ng build -c production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ms-task-manager-frontend": "node dist/ms-task-manager-frontend/server/server.mjs"
