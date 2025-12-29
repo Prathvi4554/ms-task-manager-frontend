@@ -24,5 +24,5 @@ It allows users to create, update, delete, and manage tasks with user authentica
 ### 1. Clone the repository
 
 ```bash
-git clone <your-frontend-repo-url>
+git clone https://github.com/Prathvi4554/ms-task-manager-frontend.git
 cd ms-task-manager-frontend
