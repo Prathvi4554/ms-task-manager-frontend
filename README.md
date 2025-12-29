@@ -24,8 +24,9 @@ Installation
  1. Clone the repository
 
 bash
-git clone https://github.com/Prathvi4554/ms-task-manager-frontend.git
-cd ms-task-manager-frontend
+
+- git clone https://github.com/Prathvi4554/ms-task-manager-frontend.git
+- cd ms-task-manager-frontend
 
 2. Install dependencies
 
