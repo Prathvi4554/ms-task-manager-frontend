@@ -16,7 +16,7 @@ It allows users to create, update, delete, and manage tasks with user authentica
 - **Angular**
 - **TypeScript**
 - **RxJS**
-- **Bootstra
+-  **Bootstrap**
 - **JWT Authentication**
 
 - ##  Installation
