@@ -1,0 +1,54 @@
+<nav class="navbar">
+    <h1 class="ms-5">Task Manager</h1>
+</nav>
+
+<!-- Header Buttons -->
+<div class="actions mb-2" >
+    <button (click)="switchToView()" class="btn btn-primary ms-md-5">View</button>
+    <button (click)="switchToCreate()" class="btn btn-primary ms-md-5" *ngIf="isAdmin">Create</button>
+</div>
+
+<!-- CREATE MODE -->
+<form *ngIf="mode() === 'create'" [formGroup]="taskForm" class="p-4 border rounded shadow-sm">
+
+    <div class="mb-2">
+        <label class="form-label">Header</label>
+        <input type="text" formControlName="header" class="form-control">
+
+        <div *ngIf="taskForm.get('header')?.touched && taskForm.get('header')?.invalid">
+            <small *ngIf="taskForm.get('header')?.errors?.['required']">
+                Header is required
+            </small>
+        </div>
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label">Description</label>
+        <textarea formControlName="description" rows="4" cols="40" placeholder="Enter the Description"
+            class="form-control">
+  </textarea>
+
+        <div *ngIf="taskForm.get('description')?.touched && taskForm.get('description')?.invalid">
+            <small>Description is required</small>
+        </div>
+    </div>
+
+    <button (click)="createTask()" class="btn btn-success">Submit</button>
+
+
+</form>
+
+<!-- VIEW MODE -->
+<div *ngIf="mode() === 'view'" class="scroll-list m-5">
+    <div *ngFor="let task of taskInfos" class="card p-2 ms-2">
+        <h4>{{ task.header }}</h4>
+        <p>{{ task.description }}</p>
+
+        <select [(ngModel)]="task.status" (ngModelChange)="onStatusChange(task, $event)"
+            class="form-select form-select-sm w-auto mb-2">
+            <option *ngFor="let status of taskStatus" [value]="status">{{ status }}</option>
+        </select>
+
+        <button (click)="deleteTask(task._id)" class="btn btn-danger">Delete Task</button>
+    </div>
+</div>
