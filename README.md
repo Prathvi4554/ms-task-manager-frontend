@@ -23,15 +23,15 @@ Installation
 
  1. Clone the repository
 
-   bash
+    bash
 
 - git clone https://github.com/Prathvi4554/ms-task-manager-frontend.git
 - cd ms-task-manager-frontend
 
 2. Install dependencies
 
-npm install
+   npm install
 
 3. Run the development server
 
-npm start
+   npm start
